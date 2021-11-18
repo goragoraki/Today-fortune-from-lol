@@ -19,13 +19,15 @@ request(nameUrl, function(error, response, body){
         var match_list = JSON.parse(body);
         console.log(match_list);
 
+        //i 만큼의 매치 분석
         for (var i = 0; i < 1; i++) {
             var matchUrl = "https://asia.api.riotgames.com/lol/match/v5/matches/" + urlenconde(match_list[i]) + "?api_key=" + api_key
+            //매치id추출
             request(matchUrl, (error, response, body) => {
-                var match = JSON.parse(body);
+                var match = JSON.parse(body); //match id
                 var first_team_id = match["info"]["participants"][0]["teamId"]
-                var my_info = { "kills": 0, "deaths": 0, "assists":0};
-                var team_info = [{ "kills": 0, "deaths": 0,"assists":0 }, { "kills": 0, "deaths": 0, "assists":0}];
+                var my_info = { "kills": 0, "deaths": 0, "assists":0, "gold": 0};
+                var team_info = [{ "kills": 0, "deaths": 0,"assists":0, "gold":0 }, { "kills": 0, "deaths": 0, "assists":0, "gold":0}];
                 
                 var my_team_id;
                 for (var j = 0; j < 10; j++) {
@@ -35,21 +37,23 @@ request(nameUrl, function(error, response, body){
                         my_info["kills"] += match["info"]["participants"][j]["kills"]
                         my_info["deaths"] += match["info"]["participants"][j]["deaths"]
                         my_info["assists"] += match["info"]["participants"][j]["assists"]
+                        my_info["gold"] += match["info"]["participants"][j]["goldEarned"]
 
                         my_team_id = match["info"]["participants"][j]["teamId"]
-                    }
+                    }//자신의 정보
                     else {
                         if (first_team_id === team_id) {
                             team_info[0]["kills"] += match["info"]["participants"][j]["kills"]
                             team_info[0]["deaths"] += match["info"]["participants"][j]["deaths"]
                             team_info[0]["kills"] += match["info"]["participants"][j]["assists"]
-
-                        }
+                            team_info[0] += match["info"]["participants"][j]["goldEarned"]   
+                        }//자신의 팀 정보
                         else {
                             team_info[1]["kills"] += match["info"]["participants"][j]["kills"]
                             team_info[1]["deaths"] += match["info"]["participants"][j]["deaths"]
                             team_info[1]["assists"] += match["info"]["participants"][j]["assists"]
-                        }
+                            team_info[1] += match["info"]["participants"][j]["goldEarned"]
+                        }//상대팀 정보
                     }
                 }
                 if (first_team_id == my_team_id) my_team_id = 0;
