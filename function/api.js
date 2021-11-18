@@ -27,9 +27,11 @@ request(nameUrl, function(error, response, body){
                 var match = JSON.parse(body); //match id
                 var first_team_id = match["info"]["participants"][0]["teamId"]
                 var my_info = { "kills": 0, "deaths": 0, "assists":0, "gold": 0};
-                var team_info = [{ "kills": 0, "deaths": 0,"assists":0, "gold":0 }, { "kills": 0, "deaths": 0, "assists":0, "gold":0}];
+                var team_info = [{ "kills": 0, "deaths": 0, "assists": 0, "gold": 0 }, { "kills": 0, "deaths": 0, "assists": 0, "gold": 0 }];
+                var win;
                 
                 var my_team_id;
+                var other_team_id;
                 for (var j = 0; j < 10; j++) {
                     var p_id = match["metadata"]["participants"][j]
                     var team_id = match["info"]["participants"][j]["teamId"]
@@ -40,6 +42,7 @@ request(nameUrl, function(error, response, body){
                         my_info["gold"] += match["info"]["participants"][j]["goldEarned"]
 
                         my_team_id = match["info"]["participants"][j]["teamId"]
+                        win = match["info"]["participants"][j]["win"];
                     }//자신의 정보
                     else {
                         if (first_team_id === team_id) {
@@ -56,8 +59,14 @@ request(nameUrl, function(error, response, body){
                         }//상대팀 정보
                     }
                 }
-                if (first_team_id == my_team_id) my_team_id = 0;
-                else my_team_id = 1;
+                if (first_team_id == my_team_id) {
+                    my_team_id = 0;
+                    other_team_id = 1;
+                }
+                else {
+                    my_team_id = 1;
+                    other_team_id = 0;
+                }
                 console.log("my info: " + Object.values(my_info));
                 console.log("team kills : " + Object.values(team_info[my_team_id]));
             })
