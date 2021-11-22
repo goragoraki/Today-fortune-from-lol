@@ -11,7 +11,7 @@ module.exports = {
         var team_deaths = team_info[my_team_id]["deaths"];
         var oposs_team_kda = (team_info[other_team_id]["kills"] + team_info[other_team_id]["assists"]);
         var oposs_team_deaths = team_info[other_team_id]["deaths"];
-
+        console.log("ok1")
         if (team_kda > oposs_team_kda) {
             if (win) {
                 acv_figure += 2;
@@ -50,6 +50,7 @@ module.exports = {
             }
         }
         var data = [acv_figure, acv_luck, retal_figure, retal_luck]
+        console.log("ok1.5")
         return data;
     },
 
@@ -59,7 +60,7 @@ module.exports = {
         var my_gold = my_info["gold"]
         var team_gold = my_info["gold"] + team_info[my_team_id]["gold"];
         var oposs_team_gold = team_info[other_team_id]["gold"];
-        
+        console.log("ok2")
         // 자신의 골드가 팀 골드보다 많을 때
         if (5 * my_gold > team_gold) {
             if (team_gold > oposs_team_gold) {
@@ -77,7 +78,7 @@ module.exports = {
                 }
                 else {
                     gold_figure -= 1
-                    `주식이나 투자를 할 때 모험성이 강한 일은 피해야 하는 하루입니다. 당장 금전적인 이익이 클 것 같아도 오히려 손해를 보기 쉽습니다. 왠만하면 현재의 상황을 그대로 지켜보는 편이 좋습니다. 섣불리 투자를 했다가 좋지 않은 결과를 가져 오게 되면 오히려 자신의 기분까지 망칠 수 있는 경우가 생길 수 있습니다. 또한 무리한 성격의 투자보다는 안정적인 투자나 장기적인 투자가 길하게 작용합니다. 우선 상황을 정확하게 판단하고 수입과 지출에 대한 계획을 세우십시오. 또한 오늘 같은 날은 로또 구입은 자제해야 할 것입니다.`
+                    money_luck = `주식이나 투자를 할 때 모험성이 강한 일은 피해야 하는 하루입니다. 당장 금전적인 이익이 클 것 같아도 오히려 손해를 보기 쉽습니다. 왠만하면 현재의 상황을 그대로 지켜보는 편이 좋습니다. 섣불리 투자를 했다가 좋지 않은 결과를 가져 오게 되면 오히려 자신의 기분까지 망칠 수 있는 경우가 생길 수 있습니다. 또한 무리한 성격의 투자보다는 안정적인 투자나 장기적인 투자가 길하게 작용합니다. 우선 상황을 정확하게 판단하고 수입과 지출에 대한 계획을 세우십시오. 또한 오늘 같은 날은 로또 구입은 자제해야 할 것입니다.`
                 }  
             }
         }//자신의 골드가 팀 골드보다 적을 때
@@ -102,6 +103,7 @@ module.exports = {
                 }  
             }
         }
+        console.log("ok3")
         var data = [gold_figure, money_luck];
         return data;
     }
