@@ -1,5 +1,5 @@
 module.exports = {
-  html: function (NickName) {
+  html: function () {
     return`
     <!doctype html>
     <html>
@@ -17,9 +17,11 @@ module.exports = {
           <div class="flex w-full justify-center items-end">
             <div class="relative mr-4 lg:w-full xl:w-1/3 w-2/4 md:w-full text-left">
               <label for="hero-field" class="leading-7 text-sm text-gray-600">닉네임</label>
-              <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <form action = "/process_search" method = "post">
+              <input type="text" id="hero-field" name= "name" class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
-            <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">검색하기</button>
+            <input type = "submit" button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" value ="검색하기"></button>
+            </form>
           </div>
           <p class="text-sm mt-2 text-gray-500 mb-8 w-full">today fortune!</p>
           <div class="flex">
