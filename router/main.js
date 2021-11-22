@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const request = require("request");
 var homeView = require('../views/home.js')
+var searchView = require('../views/search.js')
 var func = require('../function/api.js')
+var calcul = require('../function/calculate.js')
 const qs = require('querystring')
 const api_key = 'RGAPI-a18c6dd4-6df4-4664-8ece-b377af46956b'
 const urlenconde = require('urlencode')
@@ -91,8 +93,13 @@ app.get('/search/:Nick_name/', (req, res) => {
                     console.log("my info: " + Object.values(my_info));
                     console.log("team kills : " + Object.values(team_info[my_team_id]));
                     console.log(team_info[0]["gold"]);
-                    console.log(win)
-                    res.send(my_info);
+                    console.log(win);
+
+                    var data1 = calcul.achievement_fortune(my_info, team_info, my_team_id, other_team_id, win);
+                    var data2 = calcul.gold_fortune(my_info, team_info, my_team_id, other_team_id, win);
+                    console.log("ok")
+                    var html = searchView.html(data1[0], data1[1], data1[2], data1[3], data2[0], data2[1]);
+                    res.send(html)
                 })
             }
         })
