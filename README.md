@@ -63,7 +63,7 @@
 ## About The Project
 <div align="center">
   <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
-    <img src="images/logo2.jpg" alt="Logo2" width="400" height="400">
+    <img src="images/logo2.jpg" alt="Logo2" width="500" height="300">
   </a>
 </div>
 
