@@ -6,9 +6,17 @@ var searchView = require('../views/search.js')
 var func = require('../function/api.js')
 var calcul = require('../function/calculate.js')
 const qs = require('querystring')
-const api_key = 'RGAPI-6ab54fc9-78a8-4b02-a4f9-f50c3e7b25af'
+const api_key = 'RGAPI-6ab54fc9-78a8-4b02-a4f9-f50c3e7b25af' //자신의 API키입력
 const urlenconde = require('urlencode');
 const { html_error } = require('../views/search.js');
+
+const fs = require('fs');
+const path = require('path');
+const HTTPS = require('https');
+const domain = "2017103951.osschatbot.ga" // 자신의 도메인 입력
+const sslport = 23023;
+const bodyParser = require('body-parser');
+
 
 app.get('/', (req, res) => {
     var html = homeView.html();
@@ -118,3 +126,20 @@ app.get('/search/:Nick_name/', (req, res) => {
 app.listen(3000, () => {
     console.log('listening on port 3000');
 })
+
+/* AWS 사용시 코드
+try {
+    const option = {
+      ca: fs.readFileSync('/etc/letsencrypt/live/' + domain +'/fullchain.pem'),
+      key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/' + domain +'/privkey.pem'), 'utf8').toString(),
+      cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/' + domain +'/cert.pem'), 'utf8').toString(),
+    };
+  
+    HTTPS.createServer(option, app).listen(sslport, () => {
+      console.log(`[HTTPS] Server is started on port ${sslport}`);
+    });
+  } catch (error) {
+    console.log('[HTTPS] HTTPS 오류가 발생하였습니다. HTTPS 서버는 실행되지 않습니다.');
+    console.log(error);
+  }
+*/
