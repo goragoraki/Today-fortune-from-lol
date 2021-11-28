@@ -61,10 +61,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+<div align="center">
   <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
-    <img src="images/logo2.jpg" alt="Logo2" width="100" height="100">
+    <img src="images/logo2.jpg" alt="Logo2" width="400" height="400">
   </a>
+</div>
 
 
 전 세계적으로 인기를 얻고 있고 수십만명의 플레이어들이 즐기는 게임 바로 lol입니다. lol은 '팀운'이라는 것을 가지고 있는데 이것으로 오늘의 운세와 접목 시켜 오늘의 운세를 나름 팀운에 근거해서(물론 신빙성은 없습니다.) 알려주는 사이트를 만들어 보고자 했습니다.
