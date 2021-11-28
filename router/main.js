@@ -6,7 +6,7 @@ var searchView = require('../views/search.js')
 var func = require('../function/api.js')
 var calcul = require('../function/calculate.js')
 const qs = require('querystring')
-const api_key = 'RGAPI-a18c6dd4-6df4-4664-8ece-b377af46956b'
+const api_key = 'RGAPI-6ab54fc9-78a8-4b02-a4f9-f50c3e7b25af'
 const urlenconde = require('urlencode');
 const { html_error } = require('../views/search.js');
 
@@ -46,7 +46,7 @@ app.get('/search/:Nick_name/', (req, res) => {
             `);
         }
         else {
-            console.log(summoner_name)
+            //console.log(summoner_name)
 
             var matchlistUrl = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + urlenconde(summoner_puuid) + "/ids?start=0&count=20&api_key=" + api_key // 소환사 puuid 추출
 
@@ -99,14 +99,13 @@ app.get('/search/:Nick_name/', (req, res) => {
                             my_team_id = 1;
                             other_team_id = 0;
                         }
-                        console.log("my info: " + Object.values(my_info));
-                        console.log("team kills : " + Object.values(team_info[my_team_id]));
-                        console.log(team_info[0]["gold"]);
-                        console.log(win);
+                        //console.log("my info: " + Object.values(my_info));
+                        //console.log("team kills : " + Object.values(team_info[my_team_id]));
+                        //console.log(team_info[0]["gold"]);
+                        //console.log(win);
 
                         var data1 = calcul.achievement_fortune(my_info, team_info, my_team_id, other_team_id, win);
                         var data2 = calcul.gold_fortune(my_info, team_info, my_team_id, other_team_id, win);
-                        console.log("ok")
                         var html = searchView.html(data1[0], data1[1], data1[2], data1[3], data2[0], data2[1]);
                         res.send(html)
                     })

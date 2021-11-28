@@ -11,7 +11,6 @@ module.exports = {
         var team_deaths = team_info[my_team_id]["deaths"];
         var oposs_team_kda = (team_info[other_team_id]["kills"] + team_info[other_team_id]["assists"]);
         var oposs_team_deaths = team_info[other_team_id]["deaths"];
-        console.log("ok1")
         if (team_kda > oposs_team_kda) {
             if (win) {
                 acv_figure += 2;
@@ -50,7 +49,6 @@ module.exports = {
             }
         }
         var data = [acv_figure, acv_luck, retal_figure, retal_luck]
-        console.log("ok1.5")
         return data;
     },
 
@@ -60,7 +58,6 @@ module.exports = {
         var my_gold = my_info["gold"]
         var team_gold = my_info["gold"] + team_info[my_team_id]["gold"];
         var oposs_team_gold = team_info[other_team_id]["gold"];
-        console.log("ok2")
         // 자신의 골드가 팀 골드보다 많을 때
         if (5 * my_gold > team_gold) {
             if (team_gold > oposs_team_gold) {
@@ -103,7 +100,6 @@ module.exports = {
                 }  
             }
         }
-        console.log("ok3")
         var data = [gold_figure, money_luck];
         return data;
     }
