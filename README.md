@@ -138,6 +138,7 @@ Here's why:
 
 ~~~js
 //AWS 사용시
+//main.js
 const domain = "ENTER YOUR API" // 자신의 도메인 입력
 
 try {
@@ -159,6 +160,31 @@ try {
 app.listen(3000, () => {
     console.log('listening on port 3000');
 }) // -> 이 부분은 local 사용시 사용. 위 코드 사용시 주석 처리
+
+~~~
+---
+
+앱스토어 혹은 구글플레이 앱 링크 넣는 법
+
+~~~js
+<button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+  <svg xmlns="Enter your google play store address" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512"> // 구글 스토어 주소입력
+    ...
+  </svg>
+    <span class="ml-4 flex items-start flex-col leading-none">
+      <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
+      <span class="title-font font-medium">Google Play</span>
+    </span>
+</button>
+<button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none">
+  <svg xmlns="Enter your apple store address" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305"> // 애플 스토어 주소 입력
+      ....
+  </svg>
+  <span class="ml-4 flex items-start flex-col leading-none">
+  <span class="text-xs text-gray-600 mb-1">Download on the</span>
+  <span class="title-font font-medium">App Store</span>
+  </span>
+</button>
 
 ~~~
 
