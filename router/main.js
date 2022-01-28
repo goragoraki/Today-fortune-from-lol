@@ -4,7 +4,7 @@ const request = require("request");
 var homeView = require('../views/home.js')
 var func = require('../function/api.js')
 const qs = require('querystring')
-const api_key = 'RGAPI-a18c6dd4-6df4-4664-8ece-b377af46956b'
+const api_key = 'PUT YOUR API'
 const urlenconde = require('urlencode')
 
 app.get('/', (req, res) => {

@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 const request = require("request");
-const api_key = 'RGAPI-584e1bd0-ab54-455d-9d51-caa0eb33e22a'
+const api_key = '' // put your api
 const urlenconde = require('urlencode')
 
-var name = '고라키'
+var name = ''
 var nameUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + urlenconde(name) + "?api_key=" + api_key
 request(nameUrl, function(error, response, body){
     var info_summoner_json = JSON.parse(body);
