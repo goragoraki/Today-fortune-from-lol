@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
     res.send(html);
 })
 
+app.get('/before', (req, res) => { 
+    res.send('준비 중입니다.')
+})
+
 app.post('/process_search', (req, res) => {
     var body = '';
     req.on('data', (data) => {
