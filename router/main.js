@@ -6,14 +6,14 @@ var searchView = require('../views/search.js')
 var func = require('../function/api.js')
 var calcul = require('../function/calculate.js')
 const qs = require('querystring')
-const api_key = 'RGAPI-6ab54fc9-78a8-4b02-a4f9-f50c3e7b25af' //자신의 API키입력
+const api_key = 'PUT YOUR API KEY' //자신의 API키입력
 const urlenconde = require('urlencode');
 const { html_error } = require('../views/search.js');
 
 const fs = require('fs');
 const path = require('path');
 const HTTPS = require('https');
-const domain = "2017103951.osschatbot.ga" // 자신의 도메인 입력
+const domain = "PUT YOUR DOMAIN" // 자신의 도메인 입력
 const sslport = 23023;
 const bodyParser = require('body-parser');
 

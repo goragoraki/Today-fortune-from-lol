@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const request = require("request");
-const api_key = 'RGAPI-a18c6dd4-6df4-4664-8ece-b377af46956b'
+const api_key = 'PUT YOUR API KEY'
 const urlenconde = require('urlencode')
 
 module.exports = {
