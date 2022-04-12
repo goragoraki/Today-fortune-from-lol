@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
+  <a href="https://github.com/goragoraki/Today-fortune-from-lol">
     <img src="images/logo.jpg" alt="Logo" width="300" height="300">
   </a>
 
@@ -16,12 +16,12 @@
   <p align="center">
     오늘의 운세를 확인해 보세요!!
     <br />
-    <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/goragoraki/Today-fortune-from-lol"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune/issues">Report Bug</a>
+    <a href="https://github.com/goragoraki/Today-fortune-from-lol">Report Bug</a>
     ·
-    <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune/issues">Request Feature</a>
+    <a href="https://github.com/goragoraki/Today-fortune-from-lol">Request Feature</a>
   </p>
 </div>
 
@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <div align="center">
-  <a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
+  <a href="https://github.com/goragoraki/Today-fortune-from-lol">
     <img src="images/logo2.jpg" alt="Logo2" width="500" height="300">
   </a>
 </div>
@@ -117,7 +117,7 @@ Here's why:
 1. Get a free API Key at [https://developer.riotgames.com](https://developer.riotgames.com)
 2. Clone the repo
    ```
-   git clone http://khuhub.khu.ac.kr/2017103951/today_fortune.git
+   git clone https://github.com/goragoraki/Today-fortune-from-lol
    ```
 3. Install NPM packages
    ```
@@ -190,12 +190,12 @@ app.listen(3000, () => {
 
 실행화면(AWS 활용)
 
-<a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
+<a href="https://github.com/goragoraki/Today-fortune-from-lol">
     <img src="images/example2-1.png" alt="Logo" width="800" height="400">
 </a>
 
 
-<a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
+<a href="https://github.com/goragoraki/Today-fortune-from-lol">
     <img src="images/example2-2.png" alt="Logo" width="800" height="400">
 </a>
 
@@ -206,7 +206,7 @@ app.listen(3000, () => {
 
 LOCAL에서 실행화면
 
-<a href="http://khuhub.khu.ac.kr/2017103951/today_fortune">
+<a href="https://github.com/goragoraki/Today-fortune-from-lol">
     <img src="images/example1.png" alt="Logo" width="800" height="400">
 </a>
 
